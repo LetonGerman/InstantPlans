@@ -26,14 +26,20 @@
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
         private void AddTaskClick(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(
-                string.Format(System.Globalization.CultureInfo.CurrentUICulture, "Invoked '{0}'", this.ToString()),
-                "TaskWindow");
+            //TextBox addtask = AddTaskTextBox;
+            this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);
+            MessageBox.Show("Task added");
         }
 
         private void AddTaskTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void TaskListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            /*TextBox addtask = AddTaskTextBox;
+            this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);*/
         }
     }
 }

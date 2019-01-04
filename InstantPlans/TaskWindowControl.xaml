@@ -14,7 +14,7 @@
             <TextBlock Margin="10" HorizontalAlignment="Center">TaskWindow</TextBlock>
             <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="TextBox" ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged"/>
             <Button Content="Add" Click="AddTaskClick" Height="20" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalAlignment="Right" Width="300" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True"/>
-            <ListBox x:Name="TaskListBox" Height="245"/>
+            <ListBox x:Name="TaskListBox" Height="245" SelectionChanged="TaskListBox_SelectionChanged"/>
         </StackPanel>
     </Grid>
 </UserControl>
