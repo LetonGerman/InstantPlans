@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="InstantPlans.TaskWindowControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
+             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
+             Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             Name="MyToolWindow">
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Margin="10" HorizontalAlignment="Center">TaskWindow</TextBlock>
+            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="TextBox" ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged"/>
+            <Button Content="Add" Click="AddTaskClick" Height="20" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalAlignment="Right" Width="300" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True"/>
+            <ListBox x:Name="TaskListBox" Height="245"/>
+        </StackPanel>
+    </Grid>
+</UserControl>
