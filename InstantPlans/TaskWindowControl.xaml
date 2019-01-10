@@ -9,12 +9,16 @@
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
              Name="MyToolWindow">
-    <Grid>
-        <StackPanel Orientation="Vertical">
-            <TextBlock Margin="10" HorizontalAlignment="Center">TaskWindow</TextBlock>
-            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="TextBox" ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged"/>
-            <Button Content="Add" Click="AddTaskClick" Height="20" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalAlignment="Right" Width="300" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True"/>
-            <ListBox x:Name="TaskListBox" Height="245" SelectionChanged="TaskListBox_SelectionChanged"/>
-        </StackPanel>
-    </Grid>
+  <Grid>
+    <StackPanel Orientation="Vertical" Height="429" VerticalAlignment="Top" Margin="0,0,0,-129">
+      <TextBlock Margin="10" HorizontalAlignment="Center">TaskWindow</TextBlock>
+      <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="Input you todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light"/>
+      <Button Content="Add" Click="AddTaskClick" Height="20" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="300"/>
+      <TextBox x:Name="ToDoLabel" Height="23" TextWrapping="Wrap" Text="TextBox" TextChanged="ToDoLabel_TextChanged"/>
+      <ListBox x:Name="TaskListBox" Height="204" SelectionChanged="TaskListBox_SelectionChanged"/>
+      <TextBox x:Name="DoingLabel" Height="23" TextWrapping="Wrap" Text="Doing" Background="White"/>
+      <ListBox x:Name="DoingBox" Height="100"/>
+
+    </StackPanel>
+  </Grid>
 </UserControl>

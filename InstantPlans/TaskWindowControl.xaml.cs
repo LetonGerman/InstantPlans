@@ -41,5 +41,10 @@
             /*TextBox addtask = AddTaskTextBox;
             this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);*/
         }
+
+        private void ToDoLabel_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }
