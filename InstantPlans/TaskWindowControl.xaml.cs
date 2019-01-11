@@ -192,6 +192,7 @@
 
         private void AddTaskTextBox_LostFocus(object sender, RoutedEventArgs e)
         {
+            if(AddTaskTextBox.Text == "")
             AddTaskTextBox.Text = "Input your todo's here...";
         }
 

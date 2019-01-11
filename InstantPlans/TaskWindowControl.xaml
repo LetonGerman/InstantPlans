@@ -4,27 +4,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:vsshell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.15.0"
-             Background="{DynamicResource {x:Static vsshell:VsBrushes.WindowKey}}"
              Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             Name="MyToolWindow">
-    <Grid Margin="0,0,0,-298">
+             Name="MyToolWindow" Width="900" Height="369">
+    <Grid Margin="0,0,0,0" Width="900">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="46" />
+            <RowDefinition Height="323"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="11*"/>
-            <ColumnDefinition Width="289*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="300*"/>
         </Grid.ColumnDefinitions>
-        <StackPanel Orientation="Vertical" Height="598" VerticalAlignment="Top" Grid.ColumnSpan="2">
-            <TextBlock Margin="10" HorizontalAlignment="Center">TaskWindow</TextBlock>
-            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="Input you todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light" MouseLeftButtonUp="AddTaskTextBox_MouseLeftButtonUp" LostFocus="AddTaskTextBox_LostFocus" GotFocus="AddTaskTextBox_GotFocus"/>
-            <Button Content="Add" Click="AddTaskClick" Height="20" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="300"/>
-            <TextBox x:Name="ToDoLabel" Height="23" TextWrapping="Wrap" Text="To Do" TextChanged="ToDoLabel_TextChanged" AllowDrop="False"/>
-            <ListBox x:Name="TaskListBox" Height="150" SelectionChanged="TaskListBox_SelectionChanged" MouseMove="TaskListBox_MouseMove" Drop="TaskListBox_Drop" AllowDrop="True" Background="White" Foreground="Black" BorderThickness="0" LostFocus="TaskListBox_LostFocus" MouseLeftButtonUp="TaskListBox_MouseLeftButtonUp" MouseDoubleClick="TaskListBox_MouseDoubleClick"/>
-            <TextBox x:Name="DoingLabel" Height="23" TextWrapping="Wrap" Text="Doing" Background="White" AllowDrop="False"/>
-            <ListBox x:Name="DoingBox" Height="150" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="0" LostFocus="DoingBox_LostFocus"/>
-            <TextBox x:Name="DoneLabel" Height="23" TextWrapping="Wrap" Text="Done" AllowDrop="False"/>
-            <ListBox x:Name="DoneBox" Height="150" AllowDrop="True" LostFocus="DoneBox_LostFocus" MouseLeftButtonUp="DoneBox_MouseLeftButtonUp"/>
 
+        <StackPanel Orientation="Vertical" Height="69" VerticalAlignment="Top" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="3">
+            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="Input your todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light" MouseLeftButtonUp="AddTaskTextBox_MouseLeftButtonUp" LostFocus="AddTaskTextBox_LostFocus" GotFocus="AddTaskTextBox_GotFocus"/>
+            <Button Content="Add" Click="AddTaskClick" Height="23" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="300" FontSize="14"/>
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Height="323" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.RowSpan="1">
+            <TextBox x:Name="ToDoLabel" Height="23" TextWrapping="Wrap" Text="To Do" TextChanged="ToDoLabel_TextChanged" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <ListBox x:Name="TaskListBox" Height="300" SelectionChanged="TaskListBox_SelectionChanged" MouseMove="TaskListBox_MouseMove" Drop="TaskListBox_Drop" AllowDrop="True" Background="White" Foreground="Black" BorderThickness="1" LostFocus="TaskListBox_LostFocus" MouseLeftButtonUp="TaskListBox_MouseLeftButtonUp" MouseDoubleClick="TaskListBox_MouseDoubleClick"/>
+
+        </StackPanel>
+
+        <StackPanel Orientation="Vertical" Height="323" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1">
+            <TextBox x:Name="DoingLabel" Height="23" TextWrapping="Wrap" Text="Doing" AllowDrop="False" Background="White" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <ListBox x:Name="DoingBox" Height="300" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="0,1" LostFocus="DoingBox_LostFocus" Margin="0"/>
+
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical" Height="323" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="1">
+            <TextBox x:Name="DoneLabel" Height="23" TextWrapping="Wrap" Text="Done" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
+            <ListBox x:Name="DoneBox" Height="300" AllowDrop="True" LostFocus="DoneBox_LostFocus" MouseLeftButtonUp="DoneBox_MouseLeftButtonUp"/>
         </StackPanel>
     </Grid>
 </UserControl>
