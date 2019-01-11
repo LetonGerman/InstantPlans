@@ -38,6 +38,7 @@
 
         private void TaskListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //MessageBox.Show("Hi");
             /*TextBox addtask = AddTaskTextBox;
             this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);*/
         }
@@ -174,6 +175,29 @@
 
             DoingBox.Items.Remove(DoingBox.SelectedItem);
             TaskListBox.Items.Remove(TaskListBox.SelectedItem);
+        }
+
+        private void TaskListBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            //if (e.LeftButton == System.Windows.Input.)
+               // if (TaskListBox_SelectionChanged())
+            DoingBox.Items.Add(TaskListBox.SelectedItem);
+            TaskListBox.Items.Remove(TaskListBox.SelectedItem);
+        }
+
+        private void AddTaskTextBox_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            AddTaskTextBox.Text = "";
+        }
+
+        private void AddTaskTextBox_LostFocus(object sender, RoutedEventArgs e)
+        {
+            AddTaskTextBox.Text = "Input your todo's here...";
+        }
+
+        private void AddTaskTextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            AddTaskTextBox.Text = "";
         }
     }
 }

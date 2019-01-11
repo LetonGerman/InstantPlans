@@ -16,10 +16,10 @@
         </Grid.ColumnDefinitions>
         <StackPanel Orientation="Vertical" Height="598" VerticalAlignment="Top" Grid.ColumnSpan="2">
             <TextBlock Margin="10" HorizontalAlignment="Center">TaskWindow</TextBlock>
-            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="Input you todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light"/>
+            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="Input you todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light" MouseLeftButtonUp="AddTaskTextBox_MouseLeftButtonUp" LostFocus="AddTaskTextBox_LostFocus" GotFocus="AddTaskTextBox_GotFocus"/>
             <Button Content="Add" Click="AddTaskClick" Height="20" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="300"/>
             <TextBox x:Name="ToDoLabel" Height="23" TextWrapping="Wrap" Text="To Do" TextChanged="ToDoLabel_TextChanged" AllowDrop="False"/>
-            <ListBox x:Name="TaskListBox" Height="150" SelectionChanged="TaskListBox_SelectionChanged" MouseMove="TaskListBox_MouseMove" Drop="TaskListBox_Drop" AllowDrop="True" Background="White" Foreground="Black" BorderThickness="0" LostFocus="TaskListBox_LostFocus" MouseLeftButtonUp="TaskListBox_MouseLeftButtonUp"/>
+            <ListBox x:Name="TaskListBox" Height="150" SelectionChanged="TaskListBox_SelectionChanged" MouseMove="TaskListBox_MouseMove" Drop="TaskListBox_Drop" AllowDrop="True" Background="White" Foreground="Black" BorderThickness="0" LostFocus="TaskListBox_LostFocus" MouseLeftButtonUp="TaskListBox_MouseLeftButtonUp" MouseDoubleClick="TaskListBox_MouseDoubleClick"/>
             <TextBox x:Name="DoingLabel" Height="23" TextWrapping="Wrap" Text="Doing" Background="White" AllowDrop="False"/>
             <ListBox x:Name="DoingBox" Height="150" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="0" LostFocus="DoingBox_LostFocus"/>
             <TextBox x:Name="DoneLabel" Height="23" TextWrapping="Wrap" Text="Done" AllowDrop="False"/>
