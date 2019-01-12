@@ -7,12 +7,13 @@
              Foreground="{DynamicResource {x:Static vsshell:VsBrushes.WindowTextKey}}"
              mc:Ignorable="d"
              d:DesignHeight="300" d:DesignWidth="300"
-             Name="MyToolWindow" Width="900" Height="369" BorderThickness="0,0,0,1">
+             Name="MyToolWindow" Width="900" Height="375" BorderThickness="0,0,0,2">
+
     <Grid Margin="0,0,0,0" Width="900">
         <Grid.RowDefinitions>
-            <RowDefinition Height="23" />
-            <RowDefinition Height="46" />
-            <RowDefinition Height="323"/>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="300"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300*"/>
@@ -20,42 +21,47 @@
             <ColumnDefinition Width="300*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Name="DockPanelGrid" Background="White" Width="900" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Left">
+        <Grid Name="DockPanelGrid" Background="White" Width="900" Grid.Row="0" Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="25">
             <Grid.RowDefinitions>
-                <RowDefinition Height="23" />
+                <RowDefinition Height="25" />
             </Grid.RowDefinitions>
-            <DockPanel Name="ToolbarPanel" Grid.Row="0" Height="23" VerticalAlignment="Top">
+            <DockPanel Name="ToolbarPanel" Grid.Row="0" Height="25" VerticalAlignment="Top">
                 <ToolBar Background="#FFD0D0D0" Width="300" HorizontalAlignment="Left">
-                    <Button Name="DeleteTasksButton" Width="23" Height="21" MouseLeftButtonUp="DeleteTasksButton_MouseLeftButtonUp" Click="DeleteTasksButton_Click">
+                    <Button Name="DeleteTasksButton" Width="25" Height="24" MouseLeftButtonUp="DeleteTasksButton_MouseLeftButtonUp" Click="DeleteTasksButton_Click">
                         <Button.Content>
                             <Image Source="Resources/icon_delete_button_366940.png" Stretch="Uniform"/>
+                        </Button.Content>
+                    </Button>
+                    <Button Name="DebugButton" Width="25" Height="24">
+                        <Button.Content>
+                            <Image Source="Resources/Idea-512.png" Stretch="Fill"/>
                         </Button.Content>
                     </Button>
                 </ToolBar>
             </DockPanel>
         </Grid>
 
-        <StackPanel Orientation="Vertical" Height="69" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
-            <TextBox x:Name="AddTaskTextBox" Height="23" TextWrapping="Wrap" Text="Input your todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light" MouseLeftButtonUp="AddTaskTextBox_MouseLeftButtonUp" LostFocus="AddTaskTextBox_LostFocus" GotFocus="AddTaskTextBox_GotFocus"/>
-            <Button Content="Add" Click="AddTaskClick" Height="23" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="300" FontSize="14"/>
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="3">
+            <TextBox x:Name="AddTaskTextBox" Height="25" TextWrapping="Wrap" Text="Input your todo's here..." ClipToBounds="True" TextChanged="AddTaskTextBox_TextChanged" FontStyle="Italic" FontWeight="Light" MouseLeftButtonUp="AddTaskTextBox_MouseLeftButtonUp" LostFocus="AddTaskTextBox_LostFocus" GotFocus="AddTaskTextBox_GotFocus" BorderThickness="1,1,1,0"/>
+            <Button Content="Add" Click="AddTaskClick" Height="25" x:Name="AddTaskButton" RenderTransformOrigin="5.886,0.442" HorizontalContentAlignment="Center" Grid.IsSharedSizeScope="True" MinWidth="300" FontSize="14" Padding="0"/>
         </StackPanel>
 
-        <StackPanel Orientation="Vertical" Height="300" VerticalAlignment="Top" Grid.Column="0" Grid.Row="2" Grid.RowSpan="1">
-            <TextBox x:Name="ToDoLabel" Height="23" TextWrapping="Wrap" Text="To Do" TextChanged="ToDoLabel_TextChanged" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
-            <ListBox x:Name="TaskListBox" Height="300" SelectionChanged="TaskListBox_SelectionChanged" MouseMove="TaskListBox_MouseMove" Drop="TaskListBox_Drop" AllowDrop="True" Background="White" Foreground="Black" BorderThickness="1" LostFocus="TaskListBox_LostFocus" MouseLeftButtonUp="TaskListBox_MouseLeftButtonUp" MouseDoubleClick="TaskListBox_MouseDoubleClick"/>
-
-        </StackPanel>
-
-        <StackPanel Orientation="Vertical" Height="300" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
-            <TextBox x:Name="DoingLabel" Height="23" TextWrapping="Wrap" Text="Doing" AllowDrop="False" Background="White" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
-            <ListBox x:Name="DoingBox" Height="300" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="0,1" LostFocus="DoingBox_LostFocus" Margin="0"/>
+        <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="2" Grid.RowSpan="1" Margin="0" VerticalAlignment="Top">
+            <TextBox x:Name="ToDoLabel" Height="25" TextWrapping="Wrap" Text="To Do" TextChanged="ToDoLabel_TextChanged" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" BorderThickness="1,0,0,1"/>
+            <ListBox x:Name="TaskListBox" SelectionChanged="TaskListBox_SelectionChanged" MouseMove="TaskListBox_MouseMove" Drop="TaskListBox_Drop" AllowDrop="True" Background="White" Foreground="Black" BorderThickness="1,1,0,1" LostFocus="TaskListBox_LostFocus" MouseLeftButtonUp="TaskListBox_MouseLeftButtonUp" MouseDoubleClick="TaskListBox_MouseDoubleClick" Height="273" VerticalContentAlignment="Center"/>
 
         </StackPanel>
 
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
+            <TextBox x:Name="DoingLabel" Height="25" TextWrapping="Wrap" Text="Doing" AllowDrop="False" Background="White" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" BorderThickness="1,0,1,1"/>
+            <ListBox x:Name="DoingBox" Height="273" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="1" LostFocus="DoingBox_LostFocus" Margin="0" Padding="0"/>
 
-        <StackPanel Orientation="Vertical" Height="300" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2">
-            <TextBox x:Name="DoneLabel" Height="23" TextWrapping="Wrap" Text="Done" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14"/>
-            <ListBox x:Name="DoneBox" Height="300" AllowDrop="True" LostFocus="DoneBox_LostFocus" MouseLeftButtonUp="DoneBox_MouseLeftButtonUp"/>
+        </StackPanel>
+
+
+        <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="0,0,0,1">
+            <TextBox x:Name="DoneLabel" Height="25" TextWrapping="Wrap" Text="Done" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" BorderThickness="0,0,1,1"/>
+            <ListBox x:Name="DoneBox" Height="273" AllowDrop="True" LostFocus="DoneBox_LostFocus" MouseLeftButtonUp="DoneBox_MouseLeftButtonUp" BorderThickness="0,1,1,1"/>
         </StackPanel>
     </Grid>
 </UserControl>

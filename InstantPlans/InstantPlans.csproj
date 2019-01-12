@@ -75,6 +75,9 @@
     <Resource Include="Resources\icon_delete_button_366940.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Idea-512.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\TaskWindowCommand.png" />
     <Content Include="Resources\TaskWindowPackage.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
