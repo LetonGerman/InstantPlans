@@ -200,5 +200,30 @@
         {
             AddTaskTextBox.Text = "";
         }
+
+        private void DeleteTasksButton_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void DeleteTasksButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to delete all tasks?", "Warning", MessageBoxButton.YesNoCancel);
+
+            switch(result)
+            {
+                case MessageBoxResult.Yes:
+                    TaskListBox.Items.Clear();
+                    DoingBox.Items.Clear();
+                    DoneBox.Items.Clear();
+                    break;
+
+                case MessageBoxResult.No:
+                    break;
+
+                case MessageBoxResult.Cancel:
+                    break;
+            }
+        }
     }
 }

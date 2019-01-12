@@ -72,8 +72,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="index.html" />
+    <Resource Include="Resources\icon_delete_button_366940.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Content Include="Resources\TaskWindowCommand.png" />
-    <Content Include="Resources\TaskWindowPackage.ico" />
+    <Content Include="Resources\TaskWindowPackage.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="stylesheet.css" />
     <VSCTCompile Include="TaskWindowPackage.vsct">
       <ResourceName>Menus.ctmenu</ResourceName>
