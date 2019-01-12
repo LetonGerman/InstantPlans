@@ -27,14 +27,18 @@
             </Grid.RowDefinitions>
             <DockPanel Name="ToolbarPanel" Grid.Row="0" Height="25" VerticalAlignment="Top">
                 <ToolBar Background="#FFD0D0D0" Width="300" HorizontalAlignment="Left">
-                    <Button Name="DeleteTasksButton" Width="25" Height="24" MouseLeftButtonUp="DeleteTasksButton_MouseLeftButtonUp" Click="DeleteTasksButton_Click">
+                    <Button Name="DeleteTasksButton" Width="25" Height="24" MouseLeftButtonUp="DeleteTasksButton_MouseLeftButtonUp" Click="DeleteTasksButton_Click" ToolTip="Remove all current tasks">
                         <Button.Content>
                             <Image Source="Resources/icon_delete_button_366940.png" Stretch="Uniform"/>
                         </Button.Content>
                     </Button>
-                    <Button Name="DebugButton" Width="25" Height="24">
+                    <Button Name="DebugButton" Width="25" Height="24" Background="{x:Null}" Click="DebugButton_Click" ToolTip="Debug: unselect all tasks">
                         <Button.Content>
-                            <Image Source="Resources/Idea-512.png" Stretch="Fill"/>
+                            <Image Source="Resources/Idea-512.png" Stretch="Fill">
+                                <Image.OpacityMask>
+                                    <ImageBrush ImageSource="Resources/Idea-512.png"/>
+                                </Image.OpacityMask>
+                            </Image>
                         </Button.Content>
                     </Button>
                 </ToolBar>

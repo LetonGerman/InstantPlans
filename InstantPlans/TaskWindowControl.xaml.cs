@@ -27,8 +27,23 @@
         private void AddTaskClick(object sender, RoutedEventArgs e)
         {
             //TextBox addtask = AddTaskTextBox;
+            if (this.AddTaskTextBox.Text == "Input your todo's here...")
+            {
+                MessageBoxResult result = MessageBox.Show("Are you sure you want to add placeholder task?", "Warning", MessageBoxButton.YesNo);
+
+                switch(result)
+                {
+                    case MessageBoxResult.Yes:
+                        this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);
+                        break;
+
+                    case MessageBoxResult.No:
+                        break;
+                }
+
+                return;
+            }
             this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);
-            MessageBox.Show("Task added");
         }
 
         private void AddTaskTextBox_TextChanged(object sender, TextChangedEventArgs e)
@@ -224,6 +239,14 @@
                 case MessageBoxResult.Cancel:
                     break;
             }
+        }
+
+        private void DebugButton_Click(object sender, RoutedEventArgs e)
+        {
+            TaskListBox.UnselectAll();
+            DoingBox.UnselectAll();
+            DoneBox.UnselectAll();
+            MessageBox.Show("All tasks unselected");
         }
     }
 }
