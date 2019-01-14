@@ -37,7 +37,13 @@ namespace InstantPlans
         /// <param name="commandService">Command service to add command to, not null.</param>
         private TaskWindowCommand(AsyncPackage package, OleMenuCommandService commandService)
         {
-            this.package = package ?? throw new ArgumentNullException(nameof(package));
+
+            if (package == null)
+            {
+                throw new ArgumentNullException(nameof(package));
+            }
+
+            this.package = package;
             commandService = commandService ?? throw new ArgumentNullException(nameof(commandService));
 
             var menuCommandID = new CommandID(CommandSet, CommandId);
