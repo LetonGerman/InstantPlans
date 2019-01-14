@@ -31,6 +31,8 @@ Install it from within the Visual Studio Extension Manager (Tools->Extension Man
 ```
 ## Usage example
 
+[![Build status](https://ci.appveyor.com/api/projects/status/q0b2lib857u19bq2?svg=true)](https://ci.appveyor.com/project/LetonGerman/instantplans)
+
 Open the extension through View Tab -> Other windows.
 
 ![Opening-extension](InstantPlans/art/screenshot_1.png)
@@ -47,7 +49,7 @@ Open the extension through View Tab -> Other windows.
 
 ## Authors
 
-* **German Leton** - *Initial work* - [PurpleBooth](https://github.com/LetonGerman)
+* **German Leton** - *Initial work* - [Project17](https://github.com/LetonGerman)
 
 See also the list of [contributors](https://github.com/LetonGerman/InstantPlans/contributors) who participated in this project.
 
