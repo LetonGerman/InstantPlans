@@ -8,10 +8,10 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-You need to have Visual Studio 2010 or newer installed as this is a VSIX extension
+You need to have Visual Studio 2017 or newer installed as this is a VSIX extension
 
 ```
-- Visual Studio 2010 or newer installed
+- Visual Studio 2017 or newer installed
 
 - Visual Studio SDK
 ```
