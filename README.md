@@ -33,9 +33,9 @@ Install it from within the Visual Studio Extension Manager (Tools->Extension Man
 
 Open the extension through View Tab -> Other windows.
 
-![Opening-extension](art\screenshot_1.png)
+![Opening-extension](InstantPlans/art/screenshot_1.png)
 
-![Extension-interface](art\screenshot_2.PNG)
+![Extension-interface](InstantPlans/art/screenshot_2.PNG)
 
 ## Contributing
 
