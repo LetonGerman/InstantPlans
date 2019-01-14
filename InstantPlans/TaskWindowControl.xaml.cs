@@ -66,7 +66,6 @@
 
         private void DoingBox_DragOver(object sender, DragEventArgs e)
         {
-            e.Effects = DragDropEffects.All;
         }
 
 
@@ -78,18 +77,13 @@
             if (TaskListBox.SelectedItem == null)
                 return;
 
-            //MessageBox.Show(TaskListBox.SelectedItem.GetType().ToString());
-            // int index = TaskListBox.SelectedItem.ToString();
-
             if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
             {
 
                 string s = TaskListBox.SelectedItem.ToString();
                 
-                DragDrop.DoDragDrop(DoingBox, s, DragDropEffects.All);
             }
 
-            //TaskListBox.Items.Remove(TaskListBox.SelectedItem);
         }
 
 
@@ -106,11 +100,7 @@
 
         private void DoingBox_DragEnter(object sender, DragEventArgs e)
         {
-            if (e.Data.GetDataPresent(DataFormats.StringFormat))
-                e.Effects = DragDropEffects.All;
-            else
-                e.Effects = DragDropEffects.None;
-            //MessageBox.Show(e.AllowedEffects.ToString());
+
         }
 
         private void TaskListBox_Drop(object sender, DragEventArgs e)
@@ -126,7 +116,7 @@
 
         private void DoingBox_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //MessageBox.Show("Task added");
+
             if (TaskListBox.SelectedIndex != -1)
             {
                 DoingBox.Items.Add(TaskListBox.SelectedItem);
@@ -143,7 +133,7 @@
 
         private void DoingBox_DragLeave(object sender, DragEventArgs e)
         {
-            //MessageBox.Show("LULW");
+
         }
 
         private void TaskListBox_LostFocus(object sender, RoutedEventArgs e)
@@ -163,7 +153,7 @@
 
         private void TaskListBox_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //MessageBox.Show("Task added");
+
             if (DoingBox.SelectedIndex != -1)
             {
                 TaskListBox.Items.Add(DoingBox.SelectedItem);
@@ -194,8 +184,6 @@
 
         private void TaskListBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //if (e.LeftButton == System.Windows.Input.)
-               // if (TaskListBox_SelectionChanged())
             DoingBox.Items.Add(TaskListBox.SelectedItem);
             TaskListBox.Items.Remove(TaskListBox.SelectedItem);
         }
