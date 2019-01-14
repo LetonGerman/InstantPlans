@@ -44,6 +44,7 @@ namespace InstantPlans
             }
 
             this.package = package;
+            
 
             if (commandService != null)
             {
