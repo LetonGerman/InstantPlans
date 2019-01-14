@@ -78,6 +78,14 @@
     <Resource Include="Resources\Idea-512.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Content Include="Resources\Icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
+    <Content Include="Resources\Preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <IncludeInVSIX>true</IncludeInVSIX>
+    </Content>
     <Content Include="Resources\TaskWindowCommand.png" />
     <Content Include="Resources\TaskWindowPackage.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
