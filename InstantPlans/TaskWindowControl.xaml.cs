@@ -236,5 +236,16 @@
             DoneBox.UnselectAll();
             MessageBox.Show("All tasks unselected");
         }
+
+        private void DoingBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DoneBox.Items.Add(TaskListBox.SelectedItem);
+            DoingBox.Items.Remove(TaskListBox.SelectedItem);
+        }
+
+        private void DoneBox_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            DoneBox.Items.Remove(TaskListBox.SelectedItem);
+        }
     }
 }

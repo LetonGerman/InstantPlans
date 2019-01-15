@@ -58,14 +58,14 @@
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2">
             <TextBox x:Name="DoingLabel" Height="25" TextWrapping="Wrap" Text="Doing" AllowDrop="False" Background="White" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" BorderThickness="1,0,1,1"/>
-            <ListBox x:Name="DoingBox" Height="273" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="1" LostFocus="DoingBox_LostFocus" Margin="0" Padding="0"/>
+            <ListBox x:Name="DoingBox" Height="273" Drop="DoingBox_Drop" DragLeave ="DoingBox_DragLeave" DragOver="DoingBox_DragOver" DragEnter="DoingBox_DragEnter" AllowDrop="True" Background="White" MouseLeftButtonUp="DoingBox_MouseLeftButtonUp" BorderThickness="1" LostFocus="DoingBox_LostFocus" Margin="0" Padding="0" MouseDoubleClick="DoingBox_MouseDoubleClick"/>
 
         </StackPanel>
 
 
         <StackPanel Orientation="Vertical" VerticalAlignment="Top" Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="0,0,0,1">
             <TextBox x:Name="DoneLabel" Height="25" TextWrapping="Wrap" Text="Done" AllowDrop="False" HorizontalContentAlignment="Center" FontWeight="Bold" FontSize="14" BorderThickness="0,0,1,1"/>
-            <ListBox x:Name="DoneBox" Height="273" AllowDrop="True" LostFocus="DoneBox_LostFocus" MouseLeftButtonUp="DoneBox_MouseLeftButtonUp" BorderThickness="0,1,1,1"/>
+            <ListBox x:Name="DoneBox" Height="273" AllowDrop="True" LostFocus="DoneBox_LostFocus" MouseLeftButtonUp="DoneBox_MouseLeftButtonUp" BorderThickness="0,1,1,1" MouseDoubleClick="DoneBox_MouseDoubleClick"/>
         </StackPanel>
     </Grid>
 </UserControl>
