@@ -26,7 +26,7 @@
         [SuppressMessage("StyleCop.CSharp.NamingRules", "SA1300:ElementMustBeginWithUpperCaseLetter", Justification = "Default event handler naming pattern")]
         private void AddTaskClick(object sender, RoutedEventArgs e)
         {
-            //TextBox addtask = AddTaskTextBox;
+
             if (this.AddTaskTextBox.Text == "Input your todo's here...")
             {
                 MessageBoxResult result = MessageBox.Show("Are you sure you want to add placeholder task?", "Warning", MessageBoxButton.YesNo);
@@ -53,9 +53,7 @@
 
         private void TaskListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //MessageBox.Show("Hi");
-            /*TextBox addtask = AddTaskTextBox;
-            this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);*/
+
         }
 
         private void ToDoLabel_TextChanged(object sender, TextChangedEventArgs e)
@@ -71,18 +69,6 @@
 
         private void TaskListBox_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
         {
-            if (TaskListBox.Items.Count == 0)
-                return;
-
-            if (TaskListBox.SelectedItem == null)
-                return;
-
-            if (e.LeftButton == System.Windows.Input.MouseButtonState.Pressed)
-            {
-
-                string s = TaskListBox.SelectedItem.ToString();
-                
-            }
 
         }
 
