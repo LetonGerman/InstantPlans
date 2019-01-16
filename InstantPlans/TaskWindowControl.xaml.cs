@@ -46,59 +46,6 @@
             this.TaskListBox.Items.Add(this.AddTaskTextBox.Text);
         }
 
-        private void AddTaskTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TaskListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void ToDoLabel_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-
-        private void DoingBox_DragOver(object sender, DragEventArgs e)
-        {
-        }
-
-
-        private void TaskListBox_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-
-        }
-
-
-        
-        private void DoingBox_Drop(object sender, DragEventArgs e)
-        {
-         
-            if (e.Data.GetDataPresent(DataFormats.StringFormat))
-            {
-                string dataString = (string)e.Data.GetData(DataFormats.StringFormat);
-                DoingBox.Items.Add(dataString);
-            }
-        }
-
-        private void DoingBox_DragEnter(object sender, DragEventArgs e)
-        {
-
-        }
-
-        private void TaskListBox_Drop(object sender, DragEventArgs e)
-        {
-                TaskListBox.Items.Add(e.Data.GetData(DataFormats.StringFormat));
-
-        }
-
-        private void DoingBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void DoingBox_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
@@ -114,11 +61,6 @@
 
             TaskListBox.Items.Remove(TaskListBox.SelectedItem);
             DoneBox.Items.Remove(DoneBox.SelectedItem);
-
-        }
-
-        private void DoingBox_DragLeave(object sender, DragEventArgs e)
-        {
 
         }
 
@@ -188,11 +130,6 @@
         private void AddTaskTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             AddTaskTextBox.Text = "";
-        }
-
-        private void DeleteTasksButton_MouseLeftButtonUp(object sender, System.Windows.Input.MouseButtonEventArgs e)
-        {
-
         }
 
         private void DeleteTasksButton_Click(object sender, RoutedEventArgs e)
